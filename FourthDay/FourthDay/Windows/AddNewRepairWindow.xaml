@@ -1,0 +1,53 @@
+﻿<Window x:Class="FourthDay.Windows.AddNewRepairWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourthDay.Windows"
+        mc:Ignorable="d"
+        Title="Вагонное депо - Добавление нового вагона" Height="600" Width="800" MinHeight="580" MinWidth="780" FontSize="16" Background="LightCoral" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Text="Ремонтирование вагона" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20"/>
+        <Button Click="click_Back" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                      Вагон: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbxCarriages" Width="250">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock >
+                                    <Run Text="{Binding Path=RegNumber}"/> - 
+                                    <Run Text="{Binding Path=RegName}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                  Бригада: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbxGroups" Width="250"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="          Тип ремонта: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbxRepairType" Width="250"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="                Причина: " VerticalAlignment="Center"/>
+                <TextBox x:Name="tbxReason" Width="250" Height="100" TextWrapping="Wrap" MaxLength="40"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Размер бонуса (%): "/>
+                <TextBox x:Name="tbxBonusPercent" Width="250" MaxLength="2"/>
+            </StackPanel>
+            
+            <Button Click="click_AddNewRepair" Content="Ремонтировать" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

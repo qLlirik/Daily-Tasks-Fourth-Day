@@ -1,0 +1,43 @@
+﻿<Window x:Class="FourthDay.Windows.AddNewEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourthDay.Windows"
+        mc:Ignorable="d"
+        x:Name="win"
+        Title="Вагонное депо - Сотрудники" Height="400" Width="600" MinHeight="380" MinWidth="580" FontSize="16" Background="LightCoral" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Text="Добавление нового сотрудника" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20"/>
+        <Button Click="click_Back" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                                  ФИО: "/>
+                <TextBox x:Name="tbxFIO" Width="250" MaxLength="40"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                    Образование: "/>
+                <TextBox x:Name="tbxBase" Width="250" MaxLength="15"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                     Стаж работы: "/>
+                <TextBox x:Name="tbxYear" Width="250" MaxLength="2"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="                 Специальность: "/>
+                <TextBox x:Name="tbxSpecial" Width="250" MaxLength="30"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Номер банковской карты: "/>
+                <TextBox x:Name="tbxNumberBankKart" Width="250" MaxLength="60"/>
+            </StackPanel>
+            
+            <Button Click="click_Add" Content="Добавить" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

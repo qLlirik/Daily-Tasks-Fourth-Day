@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Carriages">
+    <Key>
+      <PropertyRef Name="RegNumber" />
+    </Key>
+    <Property Name="RegNumber" Type="float" Nullable="false" />
+    <Property Name="RegName" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="RegCheif" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="Year" Type="smallint" Nullable="false" />
+    <Property Name="Picture" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CarriageTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Base" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Year" Type="tinyint" Nullable="false" />
+    <Property Name="Special" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NumberBankKart" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeesInGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Cheif" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Externals">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bank" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="INN" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Repair">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarriageRegNumber" Type="float" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="Start" Type="datetime" Nullable="false" />
+    <Property Name="Finish" Type="datetime" />
+    <Property Name="Reason" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="External" Type="bit" Nullable="false" />
+    <Property Name="ExternalID" Type="int" />
+    <Property Name="Bonus" Type="bit" Nullable="false" />
+    <Property Name="BonusPercent" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RepairTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Carriages_CarriageTypes">
+    <End Role="CarriageTypes" Type="Self.CarriageTypes" Multiplicity="1" />
+    <End Role="Carriages" Type="Self.Carriages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarriageTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Carriages">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesInGroup_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="EmployeesInGroup" Type="Self.EmployeesInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeesInGroup">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesInGroup_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="EmployeesInGroup" Type="Self.EmployeesInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeesInGroup">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Carriages">
+    <End Role="Carriages" Type="Self.Carriages" Multiplicity="1" />
+    <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carriages">
+        <PropertyRef Name="RegNumber" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="CarriageRegNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Externals">
+    <End Role="Externals" Type="Self.Externals" Multiplicity="0..1" />
+    <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Externals">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="ExternalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_RepairTypes">
+    <End Role="RepairTypes" Type="Self.RepairTypes" Multiplicity="1" />
+    <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RepairTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Carriages" EntityType="Self.Carriages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarriageTypes" EntityType="Self.CarriageTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeesInGroup" EntityType="Self.EmployeesInGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Externals" EntityType="Self.Externals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Repair" EntityType="Self.Repair" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RepairTypes" EntityType="Self.RepairTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Carriages_CarriageTypes" Association="Self.FK_Carriages_CarriageTypes">
+      <End Role="CarriageTypes" EntitySet="CarriageTypes" />
+      <End Role="Carriages" EntitySet="Carriages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesInGroup_Employees" Association="Self.FK_EmployeesInGroup_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeesInGroup" EntitySet="EmployeesInGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesInGroup_Groups" Association="Self.FK_EmployeesInGroup_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="EmployeesInGroup" EntitySet="EmployeesInGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Carriages" Association="Self.FK_Repair_Carriages">
+      <End Role="Carriages" EntitySet="Carriages" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Externals" Association="Self.FK_Repair_Externals">
+      <End Role="Externals" EntitySet="Externals" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Groups" Association="Self.FK_Repair_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_RepairTypes" Association="Self.FK_Repair_RepairTypes">
+      <End Role="RepairTypes" EntitySet="RepairTypes" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

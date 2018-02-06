@@ -1,0 +1,16 @@
+﻿<Window x:Class="FourthDay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourthDay"
+        mc:Ignorable="d"
+        Title="Вагонное депо - Главное меню" MinHeight="300" MinWidth="495" Height="350" Width="525" FontSize="16" Background="LightCoral" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Click="click_Employees" Content="Сотрудники" Width="250" Height="40" Margin="10"/>
+            <Button Click="click_Carriage" Content="Вагоны" Width="250" Height="40" Margin="10"/>
+            <Button Click="click_Repair" Content="Ремонт" Width="250" Height="40" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

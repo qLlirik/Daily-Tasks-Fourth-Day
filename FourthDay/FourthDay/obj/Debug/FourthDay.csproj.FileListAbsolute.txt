@@ -1,0 +1,72 @@
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\FourthDay.exe.config
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\FourthDay.exe
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\FourthDay.pdb
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\EntityFramework.dll
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\EntityFramework.xml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\MainWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\EmployeesWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\App.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay_Content.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay_MarkupCompile.cache
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay_MarkupCompile.lref
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\App.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\MainWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\EmployeesWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.g.resources
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.exe
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\FourthDay.pdb
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewEmployeeWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewEmployeeWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\JoinEmployeesToGroupWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\JoinEmployeesToGroupWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\CarriagesWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\CarriagesWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewCarriagesWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewCarriagesWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewRepairWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\RepairWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\AddNewRepairWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\RepairWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\EndRepairRegistrationWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\FourthDay\FourthDay\obj\Debug\Windows\EndRepairRegistrationWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\FourthDay.exe.config
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.exe
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.pdb
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\FourthDay.exe
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\FourthDay.pdb
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\MainWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewCarriagesWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewEmployeeWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewRepairWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\CarriagesWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\EmployeesWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\EndRepairRegistrationWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\JoinEmployeesToGroupWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\RepairWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\App.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay_Content.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay_MarkupCompile.cache
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\App.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\MainWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewCarriagesWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewEmployeeWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\AddNewRepairWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\CarriagesWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\EmployeesWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\EndRepairRegistrationWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\JoinEmployeesToGroupWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\Windows\RepairWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.g.resources
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Daily-Tasks-Fourth-Day\FourthDay\FourthDay\obj\Debug\FourthDay.csproj.GenerateResource.Cache

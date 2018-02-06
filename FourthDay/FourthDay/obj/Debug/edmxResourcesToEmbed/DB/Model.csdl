@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carriages" EntityType="Model.Carriages" />
+    <EntitySet Name="CarriageTypes" EntityType="Model.CarriageTypes" />
+    <EntitySet Name="Employees" EntityType="Model.Employees" />
+    <EntitySet Name="EmployeesInGroup" EntityType="Model.EmployeesInGroup" />
+    <EntitySet Name="Externals" EntityType="Model.Externals" />
+    <EntitySet Name="Groups" EntityType="Model.Groups" />
+    <EntitySet Name="Repair" EntityType="Model.Repair" />
+    <EntitySet Name="RepairTypes" EntityType="Model.RepairTypes" />
+    <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+    <AssociationSet Name="FK_Carriages_CarriageTypes" Association="Model.FK_Carriages_CarriageTypes">
+      <End Role="CarriageTypes" EntitySet="CarriageTypes" />
+      <End Role="Carriages" EntitySet="Carriages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Carriages" Association="Model.FK_Repair_Carriages">
+      <End Role="Carriages" EntitySet="Carriages" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesInGroup_Employees" Association="Model.FK_EmployeesInGroup_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeesInGroup" EntitySet="EmployeesInGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesInGroup_Groups" Association="Model.FK_EmployeesInGroup_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="EmployeesInGroup" EntitySet="EmployeesInGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Externals" Association="Model.FK_Repair_Externals">
+      <End Role="Externals" EntitySet="Externals" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_Groups" Association="Model.FK_Repair_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repair_RepairTypes" Association="Model.FK_Repair_RepairTypes">
+      <End Role="RepairTypes" EntitySet="RepairTypes" />
+      <End Role="Repair" EntitySet="Repair" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Carriages">
+    <Key>
+      <PropertyRef Name="RegNumber" />
+    </Key>
+    <Property Name="RegNumber" Type="Double" Nullable="false" />
+    <Property Name="RegName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="RegCheif" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int16" Nullable="false" />
+    <Property Name="Picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="CarriageTypes" Relationship="Model.FK_Carriages_CarriageTypes" FromRole="Carriages" ToRole="CarriageTypes" />
+    <NavigationProperty Name="Repair" Relationship="Model.FK_Repair_Carriages" FromRole="Carriages" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="CarriageTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Carriages" Relationship="Model.FK_Carriages_CarriageTypes" FromRole="CarriageTypes" ToRole="Carriages" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Base" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="Byte" Nullable="false" />
+    <Property Name="Special" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NumberBankKart" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EmployeesInGroup" Relationship="Model.FK_EmployeesInGroup_Employees" FromRole="Employees" ToRole="EmployeesInGroup" />
+  </EntityType>
+  <EntityType Name="EmployeesInGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Cheif" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Model.FK_EmployeesInGroup_Employees" FromRole="EmployeesInGroup" ToRole="Employees" />
+    <NavigationProperty Name="Groups" Relationship="Model.FK_EmployeesInGroup_Groups" FromRole="EmployeesInGroup" ToRole="Groups" />
+  </EntityType>
+  <EntityType Name="Externals">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bank" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="INN" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Repair" Relationship="Model.FK_Repair_Externals" FromRole="Externals" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EmployeesInGroup" Relationship="Model.FK_EmployeesInGroup_Groups" FromRole="Groups" ToRole="EmployeesInGroup" />
+    <NavigationProperty Name="Repair" Relationship="Model.FK_Repair_Groups" FromRole="Groups" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="Repair">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarriageRegNumber" Type="Double" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Finish" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="External" Type="Boolean" Nullable="false" />
+    <Property Name="ExternalID" Type="Int32" />
+    <Property Name="Bonus" Type="Boolean" Nullable="false" />
+    <Property Name="BonusPercent" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Carriages" Relationship="Model.FK_Repair_Carriages" FromRole="Repair" ToRole="Carriages" />
+    <NavigationProperty Name="Externals" Relationship="Model.FK_Repair_Externals" FromRole="Repair" ToRole="Externals" />
+    <NavigationProperty Name="Groups" Relationship="Model.FK_Repair_Groups" FromRole="Repair" ToRole="Groups" />
+    <NavigationProperty Name="RepairTypes" Relationship="Model.FK_Repair_RepairTypes" FromRole="Repair" ToRole="RepairTypes" />
+  </EntityType>
+  <EntityType Name="RepairTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Repair" Relationship="Model.FK_Repair_RepairTypes" FromRole="RepairTypes" ToRole="Repair" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Carriages_CarriageTypes">
+    <End Type="Model.CarriageTypes" Role="CarriageTypes" Multiplicity="1" />
+    <End Type="Model.Carriages" Role="Carriages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarriageTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Carriages">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Carriages">
+    <End Type="Model.Carriages" Role="Carriages" Multiplicity="1" />
+    <End Type="Model.Repair" Role="Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carriages">
+        <PropertyRef Name="RegNumber" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="CarriageRegNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesInGroup_Employees">
+    <End Type="Model.Employees" Role="Employees" Multiplicity="1" />
+    <End Type="Model.EmployeesInGroup" Role="EmployeesInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeesInGroup">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesInGroup_Groups">
+    <End Type="Model.Groups" Role="Groups" Multiplicity="1" />
+    <End Type="Model.EmployeesInGroup" Role="EmployeesInGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmployeesInGroup">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Externals">
+    <End Type="Model.Externals" Role="Externals" Multiplicity="0..1" />
+    <End Type="Model.Repair" Role="Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Externals">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="ExternalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_Groups">
+    <End Type="Model.Groups" Role="Groups" Multiplicity="1" />
+    <End Type="Model.Repair" Role="Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Repair_RepairTypes">
+    <End Type="Model.RepairTypes" Role="RepairTypes" Multiplicity="1" />
+    <End Type="Model.Repair" Role="Repair" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RepairTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Repair">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
